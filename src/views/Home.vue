@@ -1,12 +1,17 @@
 <template>
-  <div class="ml-5 mt-4">
+  <div>
     <div
-      class="d-flex"
-      v-for="n in rows"
+      class="d-flex justify-content-center"
+      v-for="n in rows.length"
       :key="n"
-      :style="{ height: `${height[n - 1]}px` }"
+      :style="{ height: `${rows[n - 1]}px` }"
     >
-      <square v-for="n in columns" :key="n" :width="width[n - 1]" />
+      <square
+        v-for="n in columns.length"
+        :key="n"
+        :width="columns[n - 1]"
+        :text="n % 2 === 0 ? 'test' : null"
+      />
     </div>
   </div>
 </template>
@@ -21,10 +26,8 @@ export default {
   },
   data() {
     return {
-      columns: 8,
-      rows: 6,
-      height: [160, 110, 60, 165, 60, 130],
-      width: [160, 90, 280, 160, 270, 100, 190, 170]
+      rows: [150, 100, 60, 165, 60, 120],
+      columns: [100, 50, 190, 105, 175, 60, 120, 125]
     };
   }
 };

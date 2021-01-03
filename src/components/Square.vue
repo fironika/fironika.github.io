@@ -1,5 +1,11 @@
 <template>
-  <div class="square" :style="{ width: `${width}px` }"></div>
+  <div
+    class="square d-flex justify-content-center align-items-center"
+    :class="{ 'square-with-text': text }"
+    :style="{ width: `${width}px` }"
+  >
+    <span v-if="text">{{ text }}</span>
+  </div>
 </template>
 
 <script>
@@ -9,6 +15,10 @@ export default {
     width: {
       type: Number,
       required: true
+    },
+    text: {
+      type: String,
+      required: false
     }
   }
 };
@@ -17,5 +27,14 @@ export default {
 <style lang="scss" scoped>
 .square {
   border: 5px solid lime;
+  transition: 0.5s;
+  color: transparent;
+}
+.square-with-text {
+  &:hover {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+  }
 }
 </style>
