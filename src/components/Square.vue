@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .square {
-  border: 5px solid lime;
+  border: 5px solid rgb(55, 0, 255);
   transition: 0.5s;
   color: transparent;
 }
