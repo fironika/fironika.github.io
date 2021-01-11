@@ -1,28 +1,16 @@
 <template>
   <div>
-    <div>
-      <div @click="toggleExpand">Menu</div>
-      <div v-if="!expanded">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-    </div>
+    <b-dd id="dropdown-1" text="Menu" class="m-md-2">
+      <b-dd-item to="/">Home</b-dd-item>
+      <b-dd-item to="/pictures">Pictures</b-dd-item>
+      <b-dd-item to="/comics">Comics</b-dd-item>
+    </b-dd>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Navigation",
-  data() {
-    return {
-      expanded: false
-    };
-  },
-  methods: {
-    toggleExpand() {
-      this.expanded = !this.expanded;
-    }
-  }
+  name: "Navigation"
 };
 </script>
 

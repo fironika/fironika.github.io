@@ -1,11 +1,13 @@
 <template>
-  <div
+  <b-button
     class="square d-flex justify-content-center align-items-center"
-    :class="{ 'square-with-text': text }"
+    variant="transparent"
+    :disabled="!link"
+    :class="{ 'square-with-link': link }"
     :style="{ width: `${width}px` }"
+    :to="`/${lowerCaseLink}`"
+    >{{ link }}</b-button
   >
-    <span v-if="text">{{ text }}</span>
-  </div>
 </template>
 
 <script>
@@ -16,9 +18,14 @@ export default {
       type: Number,
       required: true
     },
-    text: {
+    link: {
       type: String,
       required: false
+    }
+  },
+  computed: {
+    lowerCaseLink() {
+      return this.link?.toLowerCase();
     }
   }
 };
@@ -26,11 +33,12 @@ export default {
 
 <style lang="scss" scoped>
 .square {
-  border: 5px solid rgb(55, 0, 255);
+  border: 5px solid lime;
   transition: 0.5s;
+  font-size: 26px;
   color: transparent;
 }
-.square-with-text {
+.square-with-link {
   &:hover {
     background-color: black;
     color: white;

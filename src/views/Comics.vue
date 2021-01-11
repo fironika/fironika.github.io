@@ -8,7 +8,7 @@
 import Grid from "../components/Grid";
 
 export default {
-  name: "Home",
+  name: "Comics",
   components: {
     Grid
   },

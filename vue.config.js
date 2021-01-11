@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/civertest/"
+  publicPath: process.env.NODE_ENV === "production" ? "/civertest/" : "/"
 };
