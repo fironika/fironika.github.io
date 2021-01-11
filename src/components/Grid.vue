@@ -11,6 +11,8 @@
         :key="`${m}${n}`"
         :width="columns[n - 1]"
         :link="link(m, n)"
+        :picture="picture(n)"
+        :type="type"
       />
     </div>
   </div>
@@ -28,6 +30,10 @@ export default {
     links: {
       type: Array,
       required: false
+    },
+    pictures: {
+      type: Array,
+      required: false
     }
   },
   data() {
@@ -36,10 +42,21 @@ export default {
       columns: [100, 50, 190, 105, 175, 60, 120, 125]
     };
   },
+  computed: {
+    type() {
+      return this.links ? "Links" : "Pictures";
+    }
+  },
   methods: {
     link(row, column) {
-      return this.links.find(link => link.row === row && link.column === column)
-        ?.text;
+      return this.links?.find(
+        link => link.row === row && link.column === column
+      )?.text;
+    },
+    picture(n) {
+      return n <= 7 && this.pictures
+        ? this.pictures[n - 1].toString()
+        : undefined;
     }
   }
 };

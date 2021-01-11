@@ -1,6 +1,6 @@
 <template>
   <div>
-    <grid :links="links" />
+    <grid :pictures="pictures" />
   </div>
 </template>
 
@@ -14,18 +14,7 @@ export default {
   },
   data() {
     return {
-      links: [
-        {
-          row: 2,
-          column: 3,
-          text: "Pictures"
-        },
-        {
-          row: 4,
-          column: 7,
-          text: "Comics"
-        }
-      ]
+      pictures: [1, 2, 3, 4, 5, 6, 7]
     };
   }
 };
