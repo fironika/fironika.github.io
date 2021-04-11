@@ -3,14 +3,18 @@
     <div id="app">
       <navigation />
       <router-view />
+      <modal-picture v-if="$store.state.enlargedPicture" />
     </div>
   </div>
 </template>
 
 <script>
+import ModalPicture from "./components/ModalPicture";
 import Navigation from "./components/Navigation";
+
 export default {
   components: {
+    ModalPicture,
     Navigation
   }
 };

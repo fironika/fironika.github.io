@@ -4,8 +4,14 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    enlargedPicture: null
+  },
+  mutations: {
+    enlargePicture(state, pictureNumber) {
+      state.enlargedPicture = pictureNumber;
+    }
+  },
   actions: {},
   modules: {}
 });

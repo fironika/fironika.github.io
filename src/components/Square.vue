@@ -9,11 +9,16 @@
       :to="`/${lowerCaseLink}`"
       >{{ link }}</b-button
     >
-    <img
+    <div
       v-else-if="picture"
-      class="image"
-      :src="require(`../assets/Pics/${picture}.jpeg`)"
-    />
+      class="h-100 w-100 d-flex justify-content-center align-items-center"
+    >
+      <img
+        class="image"
+        :src="require(`../assets/Pics/${picture}.jpeg`)"
+        @click="$store.commit('enlargePicture', picture)"
+      />
+    </div>
   </div>
 </template>
 

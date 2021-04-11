@@ -11,7 +11,7 @@
         :key="`${m}${n}`"
         :width="columns[n - 1]"
         :link="link(m, n)"
-        :picture="picture(n)"
+        :picture="picture(m, n)"
         :type="type"
       />
     </div>
@@ -32,7 +32,7 @@ export default {
       required: false
     },
     pictures: {
-      type: Array,
+      type: Number,
       required: false
     }
   },
@@ -53,10 +53,9 @@ export default {
         link => link.row === row && link.column === column
       )?.text;
     },
-    picture(n) {
-      return n <= 7 && this.pictures
-        ? this.pictures[n - 1].toString()
-        : undefined;
+    picture(row, column) {
+      const pictureNumber = (row - 1) * 8 + column;
+      return row <= 3 ? pictureNumber.toString() : undefined;
     }
   }
 };
