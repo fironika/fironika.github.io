@@ -1,11 +1,9 @@
 <template>
-  <!-- The Modal -->
   <div id="myModal" class="modal">
-    <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="enlarged-picture">
+      <div class="h-100 w-100 d-flex justify-content-center">
         <img
+          class="picture"
           :src="require(`../assets/Pics/${enlargedPicture}.jpeg`)"
           @click="$store.commit('enlargePicture', null)"
         />
@@ -17,12 +15,6 @@
 <script>
 export default {
   name: "ModalPicture",
-  props: {
-    width: {
-      type: Number,
-      required: true
-    }
-  },
   computed: {
     enlargedPicture() {
       return this.$store.state.enlargedPicture;
@@ -49,10 +41,11 @@ export default {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  height: 80%;
 }
 
 /* The Close Button */
@@ -68,5 +61,9 @@ export default {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+.picture {
+  max-height: 90%;
+  max-width: 90%;
 }
 </style>
