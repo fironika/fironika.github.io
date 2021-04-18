@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "yarn run build && git subtree split --prefix dist -b master && git push -f origin master:master && git branch -D master"
+    "deploy": "yarn run build && git subtree split --prefix dist -b live && git push -f origin live:live && git branch -D live"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
