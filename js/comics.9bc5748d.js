@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["comics"],{c5c0:function(n,t,c){"use strict";c.r(t);var e=function(){var n=this,t=n.$createElement,c=n._self._c||t;return c("div",[c("grid",{attrs:{links:n.links}})],1)},i=[],o=c("454f"),s={name:"Comics",components:{Grid:o["a"]},data:function(){return{links:[{row:2,column:3,text:"Pictures"},{row:4,column:7,text:"Comics"}]}}},r=s,l=c("2877"),u=Object(l["a"])(r,e,i,!1,null,null,null);t["default"]=u.exports}}]);
+//# sourceMappingURL=comics.9bc5748d.js.map
